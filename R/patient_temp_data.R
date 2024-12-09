@@ -1,0 +1,26 @@
+#' Patient Temperature Data
+#'
+#' This dataset contains simulated temperature readings from a clinical trial with various issues
+#' that require cleaning. It serves as a demonstration dataset for functions addressing data wrangling,
+#' including standardizing date formats, handling unit conversions, and managing missing or invalid data.
+#'
+#' @format A data frame with 300 rows and 5 variables:
+#' \describe{
+#'   \item{Patient_ID}{Unique identifier for each patient.}
+#'   \item{Visit_Date}{Dates recorded in inconsistent formats (e.g., "YYYY-MM-DD", "DD/MM/YYYY") or as "Unknown".}
+#'   \item{Temperature}{Recorded body temperature, in either Celsius or Fahrenheit, with missing values for some entries.}
+#'   \item{Unit}{Unit of measurement for \code{Temperature} ("C" for Celsius, "F" for Fahrenheit).}
+#'   \item{Notes}{Text notes about the patient's condition, such as "Normal reading" or "Symptoms of fever".}
+#' }
+#' @details
+#' The dataset includes the following idiosyncrasies:
+#' \itemize{
+#'   \item Mixed date formats, requiring standardization to a single format.
+#'   \item Temperatures recorded in multiple units, requiring conversion for consistency.
+#'   \item Missing or invalid values, such as "Unknown" dates and \code{NA} temperatures.
+#' }
+#' @source Simulated data for instructional purposes.
+#' @examples
+#' data(patient_temp_data)
+#' head(patient_temp_data)
+"patient_temp_data"

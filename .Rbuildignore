@@ -1,0 +1,7 @@
+^project\.Rproj$
+^\.Rproj\.user$
+^data-raw$
+^LICENSE\.md$
+^korstid\.Rcheck$
+^korstid.*\.tar\.gz$
+^korstid.*\.tgz$
