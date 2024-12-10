@@ -16,5 +16,15 @@
 #' date_standardizer(df, Date)
 #' @export
 date_standardizer <- function(data, date_column) {
-  data <- dplyr::mutate(data, {{ date_column }} := lubridate::ymd({{ date_column }}))
+  date_column <- rlang::ensym(date_column)
+  data %>%
+    dplyr::mutate(
+      !!date_column := dplyr::case_when(
+        grepl("^\\d{4}-\\d{2}-\\d{2}$", !!date_column) ~ lubridate::ymd(!!date_column, quiet = TRUE),
+        grepl("^\\d{4}/\\d{2}/\\d{2}$", !!date_column) ~ lubridate::ymd(!!date_column, quiet = TRUE),
+        grepl("^\\d{2}-\\d{2}-\\d{4}$", !!date_column) ~ lubridate::dmy(!!date_column, quiet = TRUE),
+        grepl("^\\d{2}/\\d{2}/\\d{4}$", !!date_column) ~ lubridate::dmy(!!date_column, quiet = TRUE),
+        TRUE ~ NA_Date_
+      )
+    )
 }

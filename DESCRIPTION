@@ -1,9 +1,9 @@
-Package: clinTools
-Title: What the Package Does (One Line, Title Case)
+Package: MouseTools
+Title: Tools for Cleaning, Analyzing, and Visualizing Clinical Trial Data
 Version: 0.0.0.9000
 Authors@R: 
     person("Will", "Smith", , "wsmith@college.harvard.edu", role = "cre")
-Description: What the package does (one paragraph).
+Description: The MouseTools package provides a suite of tools for efficiently cleaning, analyzing, and visualizing clinical trial datasets. It simplifies data wrangling tasks such as standardizing inconsistent date formats, detecting numeric outliers, and handling mixed-unit measurements, ensuring data consistency and accuracy. The package also includes functions for generating summary tables and visualizing trends, making it a versatile tool for researchers and data analysts working with complex datasets. Originally developed for mouse vaccine trials, MouseTools is adaptable to a wide range of applications across different domains.
 License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -15,8 +15,11 @@ Imports:
     lubridate,
     stats
 Suggests: 
+    knitr,
+    rmarkdown,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Depends: 
     R (>= 3.5)
 LazyData: true
+VignetteBuilder: knitr

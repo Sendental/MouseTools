@@ -1,0 +1,90 @@
+---
+title: "MouseTools"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{MouseTools}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Introduction
+
+The `MouseTools` package is designed to simplify data cleaning, wrangling, and analysis for clinical trial datasets. This vignette demonstrates the functionality of all the package's core functions, highlighting their versatility and ease of use.
+
+# Installation
+
+Ensure the package is installed and loaded before proceeding:
+
+```{R}
+devtools::install_github("Sendental/MouseTools")
+library(MouseTools)
+```
+
+## Example Dataset
+
+We’ll use a simulated dataset to demonstrate the functions. Let’s create a dataset representing temperature readings from a clinical trial:
+
+```{R}
+df <- data.frame(
+  Patient_ID = c(1,2,3,4,5,6),
+  Visit_Date = c("2024-01-01", "01/02/2024", "Unknown", "2024-03-01", "01/04/2024", "2024-05-01"),
+  Temperature = c(98.6, 37.0, NA, 100.4, 36.8, 97.5),
+  Unit = c("F", "C", "C", "F", "C", "F"),
+  Notes = c("Normal", "Mild fever", "Unknown", "Follow-up", "Normal", "Healthy")
+)
+```
+
+## Function Demonstrations
+
+**1. Standardizing Dates (date_standardizer)**
+
+This function ensures that dates are consistent across datasets. It handles mixed formats (e.g., YYYY-MM-DD and DD/MM/YYYY) and invalid entries:
+
+```{R}
+df <- date_standardizer(df, Visit_Date)
+print(df)
+```
+
+**2. Detecting Outliers (outlier_detection)**
+
+Identify numeric outliers based on the interquartile range (IQR):
+
+```{R}
+outliers <- outlier_detection(df, Temperature)
+print(outliers)
+```
+
+**3. Summarizing Data (summary_table_with_conversion)**
+
+Summarize temperature data with automatic unit conversion. For example, convert all temperatures to Celsius:
+
+```{R}
+summary <- summary_table_with_conversion(df, "Temperature", "Temperature", "Unit", "C")
+print(summary)
+```
+
+**4. Visualizing Trends (plot_trend)**
+
+Create a line plot to visualize trends, such as patient temperatures over time:
+
+```{R}
+df <- data.frame(
+  Patient_ID = 1:10,
+  Day = 1:10,
+  Temperature = c(98.6, 99.1, 98.8, 100.4, 97.5, 98.3, 99.0, 97.6, 98.2, 98.7)
+)
+plot <- plot_trend(df, Day, Temperature)
+print(plot)
+```
+
+The resulting plot shows a clear trend in temperature changes over time.
+
+## Summary
+
+The MouseTools package offers robust functions for: • Cleaning and standardizing datasets. • Identifying and managing outliers. • Generating insightful summaries and visualizations.
+
+For more examples, refer to the help files for each function or the GitHub repository.
+
+## License
+
+This package is distributed under the GPL License.

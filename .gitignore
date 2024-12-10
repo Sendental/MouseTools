@@ -1,1 +1,6 @@
 .Rproj.user
+patient_data.csv
+
+inst/doc
+/doc/
+/Meta/

@@ -5,3 +5,5 @@
 ^korstid\.Rcheck$
 ^korstid.*\.tar\.gz$
 ^korstid.*\.tgz$
+^doc$
+^Meta$
