@@ -7,3 +7,6 @@
 ^korstid.*\.tgz$
 ^doc$
 ^Meta$
+^MouseTools\.Rcheck$
+^MouseTools.*\.tar\.gz$
+^MouseTools.*\.tgz$

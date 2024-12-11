@@ -1,6 +1,10 @@
 .Rproj.user
 patient_data.csv
+MouseTools_hexsticker.png
 
 inst/doc
 /doc/
 /Meta/
+MouseTools.Rcheck/
+MouseTools*.tar.gz
+MouseTools*.tgz
