@@ -10,3 +10,8 @@
 ^MouseTools\.Rcheck$
 ^MouseTools.*\.tar\.gz$
 ^MouseTools.*\.tgz$
+^MouseTools.Rproj$
+^MouseTools_hexsticker.png$
+^README.Rmd$
+^README.html$
+^patient_data.csv$

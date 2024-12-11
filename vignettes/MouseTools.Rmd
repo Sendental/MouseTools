@@ -18,6 +18,7 @@ Ensure the package is installed and loaded before proceeding:
 ```{R}
 devtools::install_github("Sendental/MouseTools")
 library(MouseTools)
+library(lubridate)
 ```
 
 ## Example Dataset
